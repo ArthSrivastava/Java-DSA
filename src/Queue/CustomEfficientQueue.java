@@ -23,7 +23,7 @@ public class CustomEfficientQueue<E>{
         return front == -1;
     }
 
-    public boolean enqueue(E item) throws Exception{
+    public boolean enQueue(E item) throws Exception{
         if(isFull())
         {
             throw new Exception("Overflow");
@@ -35,7 +35,7 @@ public class CustomEfficientQueue<E>{
         return true;
     }
 
-    public Object dequeue() throws Exception{
+    public Object deQueue() throws Exception{
         if(isEmpty()){
             throw new Exception("Underflow");
         }
