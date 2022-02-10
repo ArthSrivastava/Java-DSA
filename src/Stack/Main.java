@@ -24,21 +24,56 @@ public class Main {
 //        Deque<Integer> deque = new LinkedList<>();
 
 //        DynamicStack<String> stack = new DynamicStack<>(5);
-        CustomStack<String> stack = new CustomStack<>(5);
-        stack.push("Arth");
-        stack.push("Mihir");
-        stack.push("Varun");
-        stack.push("Swapnil");
-        stack.push("Mridul");
-        stack.push("Akshay");
+//        CustomStack<String> stack = new CustomStack<>(5);
+//        stack.push("Arth");
+//        stack.push("Mihir");
+//        stack.push("Varun");
+//        stack.push("Swapnil");
+//        stack.push("Mridul");
+//        stack.push("Akshay");
 //        System.out.println(stack.peek());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
 //        System.out.println(stack.pop());
 //        System.out.println(stack.pop());
+//        System.out.println(stack.pop());
+//        System.out.println(stack.pop());
+//        System.out.println(stack.pop());
+//        System.out.println(stack.pop());
+//        System.out.println(stack.pop());
+//        System.out.println(stack.pop());
+
+
+//        CustomStackUsingLL<String> stack = new CustomStackUsingLL<>();
+//        stack.push("Arth");
+//        stack.push("Mihir");
+//        stack.push("Varun");
+//        stack.push("Swapnil");
+//
+//        stack.display();
+//        System.out.println(stack.getSize());
+//
+//        System.out.println(stack.pop());
+//        System.out.println(stack.pop());
+//
+//        stack.display();
+//        System.out.println(stack.getSize());
+
+//        System.out.println(stack.peek());
+
+        CustomStackUsingArrayList<Integer> stack = new CustomStackUsingArrayList<Integer>(5);
+
+        stack.push(4);
+        stack.push(6);
+        stack.push(7);
+        stack.push(8);
+        stack.push(9);
+        stack.push(10);
+
+        stack.display();
+
+        System.out.println(stack.pop());
+
+        stack.display();
+
+
     }
 }
