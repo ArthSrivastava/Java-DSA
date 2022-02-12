@@ -1,5 +1,7 @@
 package Queue;
 
+import Stack.CustomStackUsingLL;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
@@ -37,21 +39,40 @@ public class Main {
 //
 //        queue2.display();
 
-        CircularQueue<Integer> cirQueue = new CircularQueue<Integer>(5);
-        cirQueue.enQueue(5);
-        cirQueue.enQueue(7);
-        cirQueue.enQueue(8);
-        cirQueue.enQueue(6);
-        cirQueue.enQueue(3);
-        cirQueue.display();
+//        CircularQueue<Integer> cirQueue = new CircularQueue<Integer>(5);
+//        cirQueue.enQueue(5);
+//        cirQueue.enQueue(7);
+//        cirQueue.enQueue(8);
+//        cirQueue.enQueue(6);
+//        cirQueue.enQueue(3);
+//        cirQueue.display();
+//
+//        System.out.println(cirQueue.deQueue());
+//        System.out.println(cirQueue.deQueue());
 
-        System.out.println(cirQueue.deQueue());
-        System.out.println(cirQueue.deQueue());
-
-        cirQueue.enQueue(23);
+//        cirQueue.enQueue(23);
 //        cirQueue.enQueue(45);
-        cirQueue.display();
+//        cirQueue.display();
 
+        CustomQueueUsingLL<Integer> queueLL = new CustomQueueUsingLL<>();
+
+        queueLL.enQueue(5);
+        queueLL.enQueue(8);
+        queueLL.enQueue(3);
+        queueLL.enQueue(7);
+        queueLL.enQueue(9);
+
+        queueLL.display();
+
+        System.out.println(queueLL.deQueue());
+        System.out.println(queueLL.deQueue());
+
+        queueLL.display();
+
+        System.out.println("Peek:" + queueLL.peek());
+
+        System.out.println("Front:" + queueLL.getFront());
+        System.out.println("Rear:" + queueLL.getRear());
     }
 }
 
