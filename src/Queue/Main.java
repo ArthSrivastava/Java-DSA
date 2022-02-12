@@ -54,25 +54,65 @@ public class Main {
 //        cirQueue.enQueue(45);
 //        cirQueue.display();
 
-        CustomQueueUsingLL<Integer> queueLL = new CustomQueueUsingLL<>();
+//        CustomQueueUsingLL<Integer> queueLL = new CustomQueueUsingLL<>();
+//
+//        queueLL.enQueue(5);
+//        queueLL.enQueue(8);
+//        queueLL.enQueue(3);
+//        queueLL.enQueue(7);
+//        queueLL.enQueue(9);
+//
+//        queueLL.display();
+//
+//        System.out.println(queueLL.deQueue());
+//        System.out.println(queueLL.deQueue());
+//
+//        queueLL.display();
+//
+//        System.out.println("Peek:" + queueLL.peek());
+//
+//        System.out.println("Front:" + queueLL.getFront());
+//        System.out.println("Rear:" + queueLL.getRear());
 
-        queueLL.enQueue(5);
-        queueLL.enQueue(8);
-        queueLL.enQueue(3);
-        queueLL.enQueue(7);
-        queueLL.enQueue(9);
 
-        queueLL.display();
+        CircularQueueUsingLL<String> cq = new CircularQueueUsingLL<>();
+        cq.enQueue("Arth");
+        cq.enQueue("Mihir");
+        cq.enQueue("Varun");
+        cq.enQueue("Swapnil");
 
-        System.out.println(queueLL.deQueue());
-        System.out.println(queueLL.deQueue());
+        cq.display();
 
-        queueLL.display();
+        System.out.println(cq.deQueue());
 
-        System.out.println("Peek:" + queueLL.peek());
+        System.out.println(cq.deQueue());
 
-        System.out.println("Front:" + queueLL.getFront());
-        System.out.println("Rear:" + queueLL.getRear());
+        System.out.println("Front:" + cq.getFront());
+        System.out.println("Rear:" + cq.getRear());
+
+        cq.display();
+
+        cq.enQueue("ABC");
+        cq.display();
+
+        cq.deQueue();
+        cq.deQueue();
+        cq.deQueue();
+        System.out.println(cq.getSize());
+
+        cq.enQueue("A");
+        cq.enQueue("B");
+        cq.enQueue("C");
+
+        cq.display();
+
+        System.out.println("Front:" + cq.getFront());
+        System.out.println("Rear:" + cq.getRear());
+
+        cq.deQueue();
+        cq.deQueue();
+
+        cq.display();
     }
 }
 
