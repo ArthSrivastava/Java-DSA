@@ -14,7 +14,7 @@ public class RecSumOfDigits {
     }
 
     public static void main(String[] args) {
-        System.out.println(sumOfDigits(0));
+        System.out.println(sumOfDigits(543));
     }
 
 }
