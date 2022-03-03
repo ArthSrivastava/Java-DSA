@@ -2,12 +2,12 @@ package Tree;
 
 public class BinaryTreeNode {
 
-    int data;
-    BinaryTreeNode root;
-    BinaryTreeNode left;
-    BinaryTreeNode right;
+    public int data;
+    public BinaryTreeNode root;
+    public BinaryTreeNode left;
+    public BinaryTreeNode right;
 
-    BinaryTreeNode(int k) {
+    public BinaryTreeNode(int k) {
         data = k;
     }
 }
