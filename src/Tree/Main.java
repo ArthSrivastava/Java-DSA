@@ -21,5 +21,12 @@ public class Main {
         System.out.println();
         System.out.print("Height:");
         System.out.println(operations.height(root));
+
+        //bfs traversal O(h * n);
+        int ht = operations.height(root);
+        for(int i = 1; i <= ht; i++)
+        {
+            operations.bfsTraversal(root, i);
+        }
     }
 }

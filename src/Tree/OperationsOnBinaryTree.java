@@ -38,4 +38,19 @@ public class OperationsOnBinaryTree {
             return 0;
         return Math.max(height(root.left), height(root.right)) + 1;
     }
+
+    public void bfsTraversal(BinaryTreeNode root, int k){
+        if(root == null)
+        {
+            return;
+        }
+        if(k == 1)
+        {
+            System.out.print(root.data + " ");
+            return;
+        }
+        bfsTraversal(root.left, k - 1);
+        bfsTraversal(root.right, k - 1);
+    }
+
 }
