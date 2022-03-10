@@ -21,9 +21,12 @@ public class MainBST {
         operations.insertIterative(root, 56);
         operations.insertIterative(root, 92);
         OperationsOnBinaryTree op = new OperationsOnBinaryTree();
-        op.inOrderTraversal(root);
 
 //        System.out.println(operations.searchRecursive(root, 23));
-        System.out.println(operations.searchIterative(root, 92));
+//        System.out.println(operations.searchIterative(root, 92));
+
+//        System.out.println(operations.deleteRecursive(root, 26));
+        operations.deleteRecursive(root, 56);
+        op.inOrderTraversal(root);
     }
 }

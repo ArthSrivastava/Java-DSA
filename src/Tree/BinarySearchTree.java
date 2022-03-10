@@ -67,4 +67,33 @@ public class BinarySearchTree {
         }
         return false;
     }
+
+    public BinaryTreeNode deleteRecursive(BinaryTreeNode root, int x) {
+        if(root == null)
+            return null;
+        else if (x < root.data) {
+            root.left = deleteRecursive(root.left, x);
+        } else if (x > root.data) {
+            root.right = deleteRecursive(root.right, x);
+        } else {
+            if (root.right == null) {
+                return root.left;
+            } else if (root.left == null) {
+                return root.right;
+            } else {
+                BinaryTreeNode temp = getInorderSuccDeletion(root);
+                root.data = temp.data;
+                root.right = deleteRecursive(root.right, temp.data);
+            }
+        }
+        return root;
+    }
+
+    private BinaryTreeNode getInorderSuccDeletion(BinaryTreeNode root) {
+        BinaryTreeNode curr = root.right;
+        while (curr != null && curr.left != null) {
+            curr = curr.left;
+        }
+        return curr;
+    }
 }
