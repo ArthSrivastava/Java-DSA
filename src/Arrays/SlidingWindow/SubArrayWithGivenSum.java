@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.SlidingWindow;
 
 public class SubArrayWithGivenSum {
     private static boolean hasSubArray(int[] arr, int sum) {
