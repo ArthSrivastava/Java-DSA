@@ -73,6 +73,8 @@ public class DLL {
         else{
             val = head.val;
             head = head.next;
+            if(head != null)
+                head.prev = null;
             size--;
         }
         return val;
