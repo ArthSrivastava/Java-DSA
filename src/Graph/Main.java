@@ -20,10 +20,10 @@ public class Main {
         operations.addEdge(adj, 5, 6);
 
         operations.addEdge(adj, 7, 8);
-        operations.printAdjacencyList(adj);
+//        operations.printAdjacencyList(adj);
 
-//        operations.bfsTraversal(adj, 6, 0);
-//        operations.bfsDis(adj, v);
+        operations.bfsTraversal(adj, v, 0);
+        operations.bfsDis(adj, v);
 
 //        operations.addEdge(adj, 0, 1);
 //        operations.addEdge(adj, 0, 2);
@@ -33,6 +33,6 @@ public class Main {
 //        operations.addEdge(adj, 3, 4);
 
 //        operations.dfsTraversal(adj, v, 0);
-        operations.dfsDis(adj, v);
+//        operations.dfsDis(adj, v);
     }
 }
