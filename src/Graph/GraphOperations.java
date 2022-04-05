@@ -9,6 +9,10 @@ public class GraphOperations {
         list.get(v).add(u);
     }
 
+    public void addDirectedEdge(ArrayList<ArrayList<Integer>> list, int u, int v) {
+        list.get(u).add(v);
+    }
+
     public void printAdjacencyList(ArrayList<ArrayList<Integer>> list) {
 //        for (List<Integer> li : list) {
 //            System.out.println(li);
