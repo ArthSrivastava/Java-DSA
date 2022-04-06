@@ -25,16 +25,16 @@ public class Main {
 //        CycleInAnUndirectedGraph obj = new CycleInAnUndirectedGraph();
 //        System.out.println(obj.bfsDistinct(adj, v));
 
-        operations.addDirectedEdge(adj, 0, 2);
-        operations.addDirectedEdge(adj, 0, 3);
-        operations.addDirectedEdge(adj, 2, 3);
+        operations.addDirectedEdge(adj, 0, 1);
         operations.addDirectedEdge(adj, 1, 3);
-        operations.addDirectedEdge(adj, 1, 4);
+        operations.addDirectedEdge(adj, 2, 3);
+        operations.addDirectedEdge(adj, 3, 4);
+        operations.addDirectedEdge(adj, 2, 4);
         DetectCycleInADirectedGraph obj = new DetectCycleInADirectedGraph();
-        System.out.println(obj.isCyclic(v, adj));
+//        System.out.println(obj.isCyclic(v, adj));
 //        operations.printAdjacencyList(adj);
 
         TopologicalSort obj1 = new TopologicalSort();
-        System.out.println(Arrays.toString(obj1.topoSort(v, adj)));
+        System.out.println(Arrays.toString(obj1.topoSortUsingDFS(v, adj)));
     }
 }

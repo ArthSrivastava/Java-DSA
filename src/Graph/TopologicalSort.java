@@ -3,6 +3,7 @@ package Graph;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class TopologicalSort {
     public int[] topoSort(int V, ArrayList<ArrayList<Integer>> adj)
@@ -41,5 +42,32 @@ public class TopologicalSort {
             arr[i] = list.get(i);
         }
         return arr;
+    }
+
+    public int[] topoSortUsingDFS(int V, ArrayList<ArrayList<Integer>> adj) {
+        Stack<Integer> stack = new Stack<>();
+        boolean[] visited = new boolean[V];
+        for (int i = 0; i < V; i++) {
+            if (!visited[i]) {
+                dfsRecursive(adj, i, visited, stack);
+            }
+        }
+        int[] arr = new int[V];
+        int i = 0;
+        while (!stack.isEmpty()) {
+            arr[i] = stack.pop();
+            i++;
+        }
+        return arr;
+    }
+
+    private void dfsRecursive(ArrayList<ArrayList<Integer>> adj, int s, boolean[] visited, Stack<Integer> stack) {
+        visited[s] = true;
+        for (int v : adj.get(s)) {
+            if (!visited[v]) {
+                dfsRecursive(adj, v, visited, stack);
+            }
+        }
+        stack.push(s);
     }
 }
