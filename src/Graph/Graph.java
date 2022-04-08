@@ -13,10 +13,7 @@ public class Graph {
         list.get(u).add(v);
     }
 
-    public void addDirectedWeightedEdge(ArrayList<ArrayList<Integer>> list, int u, int v, int w) {
-        weightEdge edge = new weightEdge(u, v, w);
-        list.get(u).add(v);
-    }
+
 
     public void printAdjacencyList(ArrayList<ArrayList<Integer>> list) {
 //        for (List<Integer> li : list) {

@@ -6,14 +6,11 @@ import java.util.Queue;
 import java.util.Stack;
 
 public class TopologicalSort {
-    public int[] topoSort(int V, ArrayList<ArrayList<Integer>> adj)
-    {
+    public int[] topoSort(int V, ArrayList<ArrayList<Integer>> adj) {
         // add your code here
         int[] inDeg = new int[V];
-        ArrayList<Integer> list = new ArrayList<>();
-        for(int i = 0; i < adj.size(); i++) {
-            for(int j = 0; j < adj.get(i).size(); j++)
-            {
+        for (int i = 0; i < adj.size(); i++) {
+            for (int j = 0; j < adj.get(i).size(); j++) {
                 inDeg[adj.get(i).get(j)]++;
             }
         }
@@ -22,24 +19,21 @@ public class TopologicalSort {
         //     System.out.println(i + ": " + inDeg[i]);
         // }
         Queue<Integer> queue = new LinkedList<>();
-        for(int i = 0; i < inDeg.length; i++) {
-            if(inDeg[i] == 0)
+        for (int i = 0; i < inDeg.length; i++) {
+            if (inDeg[i] == 0)
                 queue.add(i);
         }
-        while(!queue.isEmpty()) {
+        int[] arr = new int[V];
+        int index = 0;
+        while (!queue.isEmpty()) {
             int u = queue.poll();
-            list.add(u);
-            for(int v: adj.get(u)) {
+            arr[index++] = u;
+            for (int v : adj.get(u)) {
                 // if(inDeg[v] != 0)
                 inDeg[v] -= 1;
-                if(inDeg[v] == 0)
+                if (inDeg[v] == 0)
                     queue.add(v);
             }
-        }
-        int[] arr = new int[V];
-        for(int i = 0; i < list.size(); i++)
-        {
-            arr[i] = list.get(i);
         }
         return arr;
     }
