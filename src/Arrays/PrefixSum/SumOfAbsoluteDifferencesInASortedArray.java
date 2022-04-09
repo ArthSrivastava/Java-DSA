@@ -1,7 +1,7 @@
 package Arrays.PrefixSum;
 
 import java.util.Arrays;
-
+//https://leetcode.com/problems/sum-of-absolute-differences-in-a-sorted-array/
 public class SumOfAbsoluteDifferencesInASortedArray {
     public static int[] getSumAbsoluteDifferences(int[] nums) {
         int n = nums.length;
