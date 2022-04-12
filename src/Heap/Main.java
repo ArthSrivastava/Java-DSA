@@ -9,5 +9,10 @@ public class Main {
         heap.insert(5);
         heap.insert(200);
         heap.print();
+//        System.out.println("Minimum element extracted:" + heap.extractMin());
+//        heap.decreaseKey(3, 2);
+//        System.out.println(heap.deleteKey(1));
+        heap.buildHeap();
+        heap.print();
     }
 }
