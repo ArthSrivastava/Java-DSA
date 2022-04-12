@@ -1,17 +1,17 @@
 package Heap;
 
-public class MinHeap {
+public class BinaryHeap {
     int[] arr;
     int size;
     int capacity;
 
-    MinHeap(int capacity) {
+    BinaryHeap(int capacity) {
         arr = new int[capacity];
         this.capacity = capacity;
         size = 0;
     }
 
-    public void insert(int x) {
+    public void insertInMinHeap(int x) {
         if (size == capacity) {
             return;
         }
@@ -107,9 +107,44 @@ public class MinHeap {
         return -1;
     }
 
-    public void buildHeap() {
+    public void buildMinHeap() {
+        for (int i = (size - 2) / 2; i >= 0; i--) {   //RightMost Internal node: Parent of right most node
+            minHeapifyRec(i);                         // Parent = (i - 1) / 2 : here i = size - 1 ; Parent = (size - 2) / 2
+        }
+    }
+
+    //Max Heap Operations
+
+    public void maxHeapify(int i, int n) {
+        int lt = getLeftChild(i), rt = getRightChild(i);
+        int largest = i;
+        if (lt < n && arr[lt] > arr[largest]) {
+            largest = lt;
+        }
+        if (rt < n && arr[rt] > arr[largest]) {
+            largest = rt;
+        }
+        if (i != largest) {
+            int tmp = arr[i];
+            arr[i] = arr[largest];
+            arr[largest] = tmp;
+            maxHeapify(largest, n);
+        }
+    }
+
+    public void buildMaxHeap() {  //Takes any random complete binary tree and converts it to a maxHeap
         for (int i = (size - 2) / 2; i >= 0; i--) {
-            minHeapifyRec(i);
+            maxHeapify(i, size);
+        }
+    }
+
+    public void heapSort() {
+        buildMaxHeap();
+        for (int i = size - 1; i >= 1; i--) {
+            int tmp = arr[0];
+            arr[0] = arr[i];
+            arr[i] = tmp;
+            maxHeapify(0, i);
         }
     }
     private int getLeftChild(int root) {

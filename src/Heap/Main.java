@@ -2,17 +2,20 @@ package Heap;
 
 public class Main {
     public static void main(String[] args) {
-        MinHeap heap = new MinHeap(10);
-        heap.insert(10);
-        heap.insert(20);
-        heap.insert(30);
-        heap.insert(5);
-        heap.insert(200);
+        BinaryHeap heap = new BinaryHeap(10);
+        heap.insertInMinHeap(10);
+        heap.insertInMinHeap(20);
+        heap.insertInMinHeap(30);
+        heap.insertInMinHeap(5);
+        heap.insertInMinHeap(200);
         heap.print();
 //        System.out.println("Minimum element extracted:" + heap.extractMin());
 //        heap.decreaseKey(3, 2);
 //        System.out.println(heap.deleteKey(1));
-        heap.buildHeap();
+//        heap.buildMinHeap();
+
+        heap.heapSort();
         heap.print();
+
     }
 }
