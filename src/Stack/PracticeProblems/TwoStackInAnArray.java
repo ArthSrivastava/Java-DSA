@@ -43,7 +43,7 @@ public class TwoStackInAnArray {
     }
 
     public int pop2(){
-        if(top1 < cap)
+        if(top2 < cap)
         {
             int removed = arr[top2];
             top2++;
