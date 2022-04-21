@@ -74,8 +74,30 @@ public class LargestAreaInAHistogram {
         }
         return prevSmaller;
     }
+
+    //Best method
+    private static int area(int[] arr) {
+        int n = arr.length;
+        Stack<Integer> stack = new Stack<>();
+        int res = 0;
+        for (int i = 0; i < n; i++) {
+            while (!stack.isEmpty() && arr[stack.peek()] >= arr[i]) {
+                int tp = stack.pop();
+                int curr = arr[tp] * (stack.isEmpty() ? i : i - stack.peek() - 1);
+                res = Math.max(res, curr);
+            }
+            stack.push(i);
+        }
+        while (!stack.isEmpty()) {
+            int tp = stack.pop();
+            int curr = arr[tp] * (stack.isEmpty() ? n : (n - stack.peek() - 1));
+            res = Math.max(res, curr);
+        }
+        return res;
+    }
     public static void main(String[] args) {
         int[] arr = {6, 2, 5, 4, 1, 5, 6};
         System.out.println(largestArea(arr));
+        System.out.println(area(arr));
     }
 }
