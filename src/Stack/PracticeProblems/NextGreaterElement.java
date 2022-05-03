@@ -20,8 +20,33 @@ public class NextGreaterElement {
         System.out.println(nextGreater);
     }
 
+    //method 2
+    private static void nearestGreater(int[] arr) {
+        int n = arr.length;
+        Stack<Integer> stack = new Stack<>();
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i = n - 1; i >= 0; i--) {
+            if (stack.isEmpty()) {
+                list.add(0, -1);
+            } else if (!stack.isEmpty() && stack.peek() > arr[i]) {
+                list.add(0, stack.peek());
+            } else if (!stack.isEmpty() && stack.peek() <= arr[i]) {
+                while (!stack.isEmpty() && stack.peek() <= arr[i]) {
+                    stack.pop();
+                }
+                if (stack.isEmpty()) {
+                    list.add(0, -1);
+                } else {
+                    list.add(0, stack.peek());
+                }
+            }
+            stack.push(arr[i]);
+        }
+        System.out.println(list);
+    }
     public static void main(String[] args) {
-        int[] arr = {25, 20, 15, 10};
+        int[] arr = {4, 3, 5, 2};
         nextGreater(arr);
+        nearestGreater(arr);
     }
 }
