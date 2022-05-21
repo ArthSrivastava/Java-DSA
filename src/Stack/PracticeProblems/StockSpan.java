@@ -36,6 +36,33 @@ public class StockSpan {
         }
         System.out.println();
     }
+
+    //GFG submitted code
+    public static int[] calculateSpan(int price[], int n)
+    {
+        // Your code here
+        Stack<Integer> stack = new Stack<>();
+        int c = 0;
+        int[] span = new int[n];
+        for(int i = 0; i < n; i++) {
+            if(stack.isEmpty()) {
+                span[c++] = 1;
+            } else if(!stack.isEmpty() && price[stack.peek()] > price[i]) {
+                span[c++] = i - stack.peek();
+            } else {
+                while(!stack.isEmpty() && price[stack.peek()] <= price[i]) {
+                    stack.pop();
+                }
+                if(stack.isEmpty()) {
+                    span[c++] = i + 1;
+                } else {
+                    span[c++] = i - stack.peek();
+                }
+            }
+            stack.push(i);
+        }
+        return span;
+    }
     public static void main(String[] args) {
         int[] arr = {30, 20, 25, 28, 27, 29};
         stockSpanEfficient(arr);
